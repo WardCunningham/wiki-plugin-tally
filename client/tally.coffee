@@ -6,7 +6,7 @@ expand = (text)->
     .replace />/g, '&gt;'
     .replace /\*(.+?)\*/g, '<i>$1</i>'
 
-root = it = []
+it = null
 
 all = (members) ->
   stack = it
@@ -61,6 +61,7 @@ listz = (members) ->
   "<ul>#{(itemz i for i in members).join "\n"}</ul>\n"
 
 emit = ($item, item) ->
+  root = it = []
   example()
   $item.append listz root
   # debugger
