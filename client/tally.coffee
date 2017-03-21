@@ -33,7 +33,7 @@ nil = (count) ->
 
 example = () ->
   array 1, ->
-    object 50, ->
+    object 22, ->
       field 'project', ->
         string 22
       field 'manager', ->
@@ -47,7 +47,7 @@ example = () ->
               string  130
               nil 11
             field 'commiters', ->
-              array 141, ->
+              array 138, ->
                 string 390
 
 itemz = (node) ->
