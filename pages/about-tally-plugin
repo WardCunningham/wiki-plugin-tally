@@ -1,0 +1,37 @@
+{
+  "title": "About Tally Plugin",
+  "story": [
+  {
+    "type": "paragraph",
+    "id": "6c8868b781a0882a",
+    "text": "Here we describe the purpose of the plugin and include a sample."
+  },
+  {
+    "type": "tally",
+    "id": "c6aa531d4cfc9a3b",
+    "text": "This is text in the new plugin. You can *double-click* to edit it too."
+  }
+],
+  "journal": [
+  {
+    "type": "create",
+    "item": {
+      "title": "About Tally Plugin",
+      "story": [
+  {
+    "type": "paragraph",
+    "id": "6c8868b781a0882a",
+    "text": "Here we describe the purpose of the plugin and include a sample."
+  },
+  {
+    "type": "tally",
+    "id": "c6aa531d4cfc9a3b",
+    "text": "This is text in the new plugin. You can *double-click* to edit it too."
+  }
+]
+    },
+    "date": 1490067554000,
+    "certificate": "from mkplugin.sh"
+  }
+]
+}
