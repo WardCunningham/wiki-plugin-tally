@@ -28,7 +28,7 @@ string = (count) ->
   it.push ['string', count]
 
 nil = (count) ->
-  it.push ['nil', count]
+  it.push ['null', count]
 
 
 example = () ->
@@ -51,11 +51,13 @@ example = () ->
                 string 390
 
 itemz = (node) ->
+  li = '<li style="list-style: none;margin-left: -20px;">'
+  sm = () -> "<font size=-2 color=gray>#{node[0].toUpperCase()} × #{node[1]}</font>"
   switch node[0]
-    when 'array' then "<li> ARRAY×#{node[1]} #{listz node[2]}"
-    when 'object' then "<li> OBJECT×#{node[1]} #{listz node[2]}"
-    when 'field' then "<li> #{node[1]}: #{listz node[2]}"
-    else "<li> #{node[0].toUpperCase()}×#{node[1]}"
+    when 'array' then "#{li} [ #{sm()} #{listz node[2]}"
+    when 'object' then "#{li} { #{sm()} #{listz node[2]}"
+    when 'field' then "#{li} <b>#{node[1]}</b>: #{listz node[2]}"
+    else "#{li} #{sm()}"
 
 listz = (members) ->
   "<ul>#{(itemz i for i in members).join "\n"}</ul>\n"
@@ -63,7 +65,7 @@ listz = (members) ->
 emit = ($item, item) ->
   root = it = []
   example()
-  $item.append listz root
+  $item.append "<div style='background-color: #eee; padding: 4px;'>#{listz root}</div>"
   # debugger
   # list = listz root
   # tree = JSON.stringify(root[0], null, 2)
