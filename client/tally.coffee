@@ -51,21 +51,24 @@ example = () ->
                 string 390
 
 itemz = (node) ->
-  li = '<li style="list-style: none;margin-left: -20px;">'
-  sm = () -> "<font size=-2 color=gray>#{node[0].toUpperCase()} × #{node[1]}</font>"
+  li = '<li style="list-style: none;margin-left: -25px;">'
+  sm = () -> "<font size=-2 color=#888>#{node[0].toUpperCase()}×#{node[1]}</font>"
   switch node[0]
     when 'array' then "#{li} [ #{sm()} #{listz node[2]}"
     when 'object' then "#{li} { #{sm()} #{listz node[2]}"
-    when 'field' then "#{li} <b>#{node[1]}</b>: #{listz node[2]}"
-    else "#{li} #{sm()}"
+    when 'field' then "#{li} <b>#{node[1]}</b>: #{linez node[2]}"
+    else " #{sm()}"
 
 listz = (members) ->
   "<ul>#{(itemz i for i in members).join "\n"}</ul>\n"
 
+linez = (members) ->
+  "#{(itemz i for i in members).join "\n"}\n"
+
 emit = ($item, item) ->
   root = it = []
   example()
-  $item.append "<div style='background-color: #eee; padding: 4px;'>#{listz root}</div>"
+  $item.append "<div style='background-color: #eee; padding: 1px;'>#{listz root}</div>"
   # debugger
   # list = listz root
   # tree = JSON.stringify(root[0], null, 2)
